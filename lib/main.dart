@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primary,
       ),
-      home:   BottonBar(),
+      home: BottonBar(),
     );
   }
 }
