@@ -1,9 +1,11 @@
 import 'package:booking/screens/hotel_screen.dart';
 import 'package:booking/screens/ticket_view.dart';
+import 'package:booking/utils/app_info_list.dart';
 import 'package:booking/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -24,24 +26,24 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  [
+                        children: [
                           Text('Good Morning', style: Styles.headLineStyle3),
                           const Gap(5),
-                          Text('Book Tickets', style: Styles.headLineStyle2,),
+                          Text(
+                            'Book Tickets',
+                            style: Styles.headLineStyle2,
+                          ),
                         ],
                       ),
                       Container(
                         height: 50,
                         width: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                         image: const DecorationImage(
-                           fit: BoxFit.fitHeight,
-                           image: AssetImage(
-                             'assets/images/img_1.png'
-                           ),
-                         )
-                        ),
+                            borderRadius: BorderRadius.circular(10),
+                            image: const DecorationImage(
+                              fit: BoxFit.fitHeight,
+                              image: AssetImage('assets/images/img_1.png'),
+                            )),
                       ),
                     ],
                   ),
@@ -50,12 +52,19 @@ class HomeScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0xFFF4F6FD),
-                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 12),
                     child: Row(
                       children: [
-                        const Icon(FluentSystemIcons.ic_fluent_search_regular,color: Color(0xFFBFC205),),
-                        Text('Search', style: Styles.headLineStyle4,),
+                        const Icon(
+                          FluentSystemIcons.ic_fluent_search_regular,
+                          color: Color(0xFFBFC205),
+                        ),
+                        Text(
+                          'Search',
+                          style: Styles.headLineStyle4,
+                        ),
                       ],
                     ),
                   ),
@@ -63,12 +72,19 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Coming Flights',style: Styles.headLineStyle2,),
+                      Text(
+                        'Coming Flights',
+                        style: Styles.headLineStyle2,
+                      ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           print('Ypu are tapped');
                         },
-                        child: Text('View all', style: Styles.textStyle,),),
+                        child: Text(
+                          'View all',
+                          style: Styles.textStyle,
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -80,11 +96,9 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                const TicketView(),
-                const TicketView(),
-                const TicketView(),
-              ],
+              children: ticketList
+                  .map((singleTicket) => TicketView(ticket: singleTicket))
+                  .toList(),
             ),
           ),
           const Gap(15),
@@ -93,12 +107,19 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Hotels',style: Styles.headLineStyle2,),
+                Text(
+                  'Hotels',
+                  style: Styles.headLineStyle2,
+                ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     print('Ypu are tapped');
                   },
-                  child: Text('View all', style: Styles.textStyle,),),
+                  child: Text(
+                    'View all',
+                    style: Styles.textStyle,
+                  ),
+                ),
               ],
             ),
           ),
@@ -106,14 +127,10 @@ class HomeScreen extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
-              child: Row(
-                children: [
-                  const HotelScreen(),
-                  const HotelScreen(),
-                  const HotelScreen(),
-                ],
-              ),
-
+            child: Row(
+                children: hotelList
+                    .map((singleHotel) => HotelScreen(hotel: singleHotel))
+                    .toList()),
           ),
         ],
       ),
