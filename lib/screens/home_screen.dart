@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(40),
-                  AppDoubletext(
+                  const AppDoubletext(
                     bigText: 'Upcoming flights',
                     smallText: 'View all',
                   )
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: AppDoubletext(
+              child: const AppDoubletext(
                 bigText: 'Hotels',
                 smallText: 'View all',
               )),

@@ -26,7 +26,7 @@ class AppIconText extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Color(0xFFBFC2DF),
+            color: const Color(0xFFBFC2DF),
           ),
           Gap(AppLayout.getWith(10)),
           Text(
