@@ -13,6 +13,7 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Scaffold(
+      backgroundColor: Styles.bgColor,
       body: Stack(
         children: [
           ListView(
@@ -29,7 +30,10 @@ class TicketScreen extends StatelessWidget {
               const AppTicketTabs(firstTab: 'Upcoming', secondTab: 'Previous'),
               Container(
                 padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
-                child: TicketView(ticket: ticketList[0]),
+                child: TicketView(
+                  ticket: ticketList[0],
+                  isColor: true,
+                ),
               )
             ],
           )
