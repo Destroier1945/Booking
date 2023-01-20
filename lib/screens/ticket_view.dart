@@ -16,7 +16,7 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
       width: size.width,
-      height: AppLayout.getHeight(200),
+      height: AppLayout.getHeight(172),
       child: Container(
         width: size.width * 0.85,
         margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
@@ -89,7 +89,7 @@ class TicketView extends StatelessWidget {
                                   Icons.local_airport_rounded,
                                   color: isColor == null
                                       ? Colors.white
-                                      : Color(0xFF8ACCF7),
+                                      : const Color(0xFF8ACCF7),
                                 ),
                               ),
                             ),
@@ -157,13 +157,12 @@ class TicketView extends StatelessWidget {
                   SizedBox(
                     height: AppLayout.getHeight(20),
                     width: AppLayout.getWith(10),
-                    child: DecoratedBox(
+                    child: const DecoratedBox(
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(AppLayout.getHeight(10)),
-                            bottomRight:
-                                Radius.circular(AppLayout.getHeight(10)),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           )),
                     ),
                   ),
@@ -219,8 +218,10 @@ class TicketView extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isColor == null ? Styles.orangeColor : Colors.white,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(AppLayout.getHeight(20)),
-                  bottomRight: Radius.circular(AppLayout.getHeight(20)),
+                  bottomLeft: Radius.circular(
+                      AppLayout.getHeight(isColor == null ? 21 : 0)),
+                  bottomRight: Radius.circular(
+                      AppLayout.getHeight(isColor == null ? 21 : 0)),
                 ),
               ),
               padding: const EdgeInsets.only(

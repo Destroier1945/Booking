@@ -1,6 +1,7 @@
 import 'package:booking/screens/hotel_screen.dart';
 import 'package:booking/screens/ticket_view.dart';
 import 'package:booking/utils/app_info_list.dart';
+import 'package:booking/utils/app_layout.dart';
 import 'package:booking/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Styles.bgColor,
       body: ListView(
         children: [
+          Gap(AppLayout.getHeight(30)),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(

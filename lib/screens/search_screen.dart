@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:booking/utils/app_layout.dart';
 import 'package:booking/utils/app_styles.dart';
 import 'package:booking/widgets/ticket_tabs.dart';

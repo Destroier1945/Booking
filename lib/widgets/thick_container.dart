@@ -14,7 +14,7 @@ class ThickContainer extends StatelessWidget {
             width: 2.5,
             color: isColor == null
                 ? Colors.white
-                : Color.fromARGB(255, 98, 183, 239)),
+                : const Color.fromARGB(255, 98, 183, 239)),
       ),
     );
   }
