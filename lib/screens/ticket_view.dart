@@ -1,5 +1,6 @@
 import 'package:booking/utils/app_layout.dart';
 import 'package:booking/utils/app_styles.dart';
+import 'package:booking/widgets/layout_builder_widget.dart';
 import 'package:booking/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -54,34 +55,11 @@ class TicketView extends StatelessWidget {
                         child: Stack(
                           children: [
                             SizedBox(
-                              height: AppLayout.getHeight(25),
-                              child: LayoutBuilder(
-                                builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return Flex(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    direction: Axis.horizontal,
-                                    children: List.generate(
-                                      (constraints.constrainWidth() / 6)
-                                          .floor(),
-                                      (index) => SizedBox(
-                                        width: 3,
-                                        height: 1,
-                                        child: DecoratedBox(
-                                          decoration: BoxDecoration(
-                                            color: isColor == null
-                                                ? Colors.white
-                                                : Colors.grey.shade300,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
+                                height: AppLayout.getHeight(25),
+                                child: AppLayoutBuilder(
+                                  isColor: true,
+                                  sections: 6,
+                                )),
                             Center(
                               child: Transform.rotate(
                                 angle: 1.5,
